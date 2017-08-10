@@ -13,9 +13,16 @@ public class NaoResidencial implements Imovel {
 
     private List<AliquotaBase> aliquotaBaseList;
     private BigDecimal valor;
+    private BigDecimal desconto;
 
     public NaoResidencial(BigDecimal valor) {
         this.valor = valor;
+        this.desconto = new BigDecimal(0.0d);
+        this.aliquotaBaseList = createAliquotas();
+    }
+    public NaoResidencial(BigDecimal valor, BigDecimal desconto) {
+        this.valor = valor;
+        this.desconto = desconto;
         this.aliquotaBaseList = createAliquotas();
     }
 
@@ -47,6 +54,10 @@ public class NaoResidencial implements Imovel {
         return this.valor;
     }
 
+    public BigDecimal getDesconto(){
+        return this.desconto;
+    }
+
     public List<AliquotaBase> getAliquotaBaseList(){
         return this.aliquotaBaseList;
     }
@@ -59,5 +70,12 @@ public class NaoResidencial implements Imovel {
     @Override
     public List<AliquotaBase> getAliquotas(){
         return this.getAliquotaBaseList();
+    }
+
+    @Override
+    public BigDecimal getBeneficio(){
+        if(null != getDesconto())
+            return getDesconto();
+        return new BigDecimal(0.0d);
     }
 }

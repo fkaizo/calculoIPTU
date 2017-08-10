@@ -11,5 +11,7 @@ import java.util.List;
 public interface Imovel {
 
     BigDecimal getValorImovel();
+    BigDecimal getBeneficio();
     List<AliquotaBase> getAliquotas();
+
 }

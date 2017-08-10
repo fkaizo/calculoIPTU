@@ -18,9 +18,21 @@ public class CalculoIPTUTest {
 
         Imovel residencial = new Residencial(new BigDecimal(180000.0d));
 
+
         BigDecimal valorCalculado = CalculoIPTU.calculateFromImovel(residencial);
 
         Assert.assertTrue(areEquals(valorCalculado, 1164.55d));
+
+    }
+    @Test
+    public void TestResidencialWithDiscount(){
+
+        Imovel residencial = new Residencial(new BigDecimal(180000.0d), new BigDecimal(1000));
+
+
+        BigDecimal valorCalculado = CalculoIPTU.calculateFromImovel(residencial);
+
+        Assert.assertTrue(areEquals(valorCalculado, 164.55d));
 
     }
 

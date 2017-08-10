@@ -13,11 +13,20 @@ public class Territorial implements Imovel {
 
     private List<AliquotaBase> aliquotaBaseList;
     private BigDecimal valor;
+    private BigDecimal desconto;
 
     public Territorial(BigDecimal valor) {
         this.valor = valor;
+        this.desconto = new BigDecimal(0.0d);
         this.aliquotaBaseList = createAliquotas();
     }
+
+    public Territorial(BigDecimal valor, BigDecimal desconto) {
+        this.valor = valor;
+        this.desconto = desconto;
+        this.aliquotaBaseList = createAliquotas();
+    }
+
 
     private List<AliquotaBase> createAliquotas(){
         List<AliquotaBase> aliquotaBaseList = new ArrayList<>();
@@ -47,6 +56,10 @@ public class Territorial implements Imovel {
         return this.valor;
     }
 
+    public BigDecimal getDesconto(){
+        return this.desconto;
+    }
+
     public List<AliquotaBase> getAliquotaBaseList(){
         return this.aliquotaBaseList;
     }
@@ -59,5 +72,12 @@ public class Territorial implements Imovel {
     @Override
     public List<AliquotaBase> getAliquotas(){
         return this.getAliquotaBaseList();
+    }
+
+    @Override
+    public BigDecimal getBeneficio(){
+        if(null != getDesconto())
+            return getDesconto();
+        return new BigDecimal(0.0d);
     }
 }

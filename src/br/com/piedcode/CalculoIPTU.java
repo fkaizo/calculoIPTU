@@ -43,6 +43,6 @@ public class CalculoIPTU {
                 break;
             }
         }
-        return totalIPTU;
+        return totalIPTU.subtract(imovel.getBeneficio());
     }
 }
