@@ -16,11 +16,15 @@ public class CalculoIPTUTest {
     @Test
     public void TestResidencial01(){
 
-        Imovel residencial = new Residencial(new BigDecimal(90000.0d));
+        Imovel residencial = new Residencial(new BigDecimal(180000.0d));
 
         BigDecimal valorCalculado = CalculoIPTU.calculateFromImovel(residencial);
 
-        Assert.assertTrue(valorCalculado.compareTo(new BigDecimal(123.0d)) == 0);
+        Assert.assertTrue(areEquals(valorCalculado, 1164.55d));
 
+    }
+
+    private boolean areEquals(BigDecimal generated, double base){
+        return (generated.setScale(2,BigDecimal.ROUND_HALF_EVEN).compareTo((new BigDecimal(base)).setScale(2,BigDecimal.ROUND_HALF_EVEN)) == 0);
     }
 }

@@ -20,10 +20,10 @@ public class CalculoIPTU {
             BigDecimal valorCalcular = new BigDecimal(0d);
 
             // se o valor do imovel é maior que o valor minimo da aliquota
-            if (imovel.getValorImovel().compareTo(a.getValorInicial()) > 1) {
+            if (imovel.getValorImovel().compareTo(a.getValorInicial()) > 0) {
 
                 //se o valor do imovel é maior que o valor maximo da aliquota
-                if(imovel.getValorImovel().compareTo(a.getValorFinal()) > 1 ){
+                if(imovel.getValorImovel().compareTo(a.getValorFinal()) > 0 ){
                     //pega o valor a calcular como o intervalo da aliquota
                     valorCalcular = a.getIntervalo();
 

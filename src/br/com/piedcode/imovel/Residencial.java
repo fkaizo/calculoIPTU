@@ -24,7 +24,7 @@ public class Residencial implements Imovel {
 
         aliquotaBaseList.add(
                 new AliquotaBase(
-                        new BigDecimal(0.6d),
+                        new BigDecimal(0.006d),
                         new BigDecimal(0.0d),
                         new BigDecimal(95450.0d),
                         new BigDecimal(95450.0d)
@@ -33,7 +33,7 @@ public class Residencial implements Imovel {
 
         aliquotaBaseList.add(
                 new AliquotaBase(
-                        new BigDecimal(0.7d),
+                        new BigDecimal(0.007d),
                         new BigDecimal(95450.01d),
                         new BigDecimal(238626.0d),
                         new BigDecimal(143176.0d)
@@ -42,7 +42,7 @@ public class Residencial implements Imovel {
 
         aliquotaBaseList.add(
                 new AliquotaBase(
-                        new BigDecimal(0.75d),
+                        new BigDecimal(0.0075d),
                         new BigDecimal(238626.01d),
                         new BigDecimal(417596.0d),
                         new BigDecimal(178970.0d)
