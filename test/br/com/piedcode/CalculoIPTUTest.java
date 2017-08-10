@@ -1,4 +1,4 @@
-package br.compiedcode;
+package br.com.piedcode;
 
 import br.com.piedcode.CalculoIPTU;
 import br.com.piedcode.imovel.Imovel;
